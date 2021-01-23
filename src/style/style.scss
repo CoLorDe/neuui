@@ -1,0 +1,260 @@
+@import "reset";
+@import "variables";
+
+:root {
+  background-color: #E6E6E6;
+  color: #666;
+  a {
+    text-decoration: none;
+    color: $link;
+  }
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-shadow: 0 10px 10px $shadow,
+              0 10px 10px inset $light,
+              0 -10px 10px inset $light-shadow;
+
+  h1 {
+    padding-left: 1em;
+  }
+
+  .nav {
+    padding: 1rem;
+  }
+
+  a {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
+
+.main {
+  padding: 5vw;
+
+  h2 {
+    color: #555;
+  }
+
+  .ex-container {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+
+      .item {
+        margin: 1vw;
+      }
+
+      .description {
+        font-weight: 600;
+        color: #666;
+      }
+
+      .pad-top {
+        padding-top: 4rem;
+      }
+
+      .example {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 10px 10px 20px $shadow,
+                  -10px -10px 20px $light;
+      }
+
+      .example:active {
+        box-shadow: 5px 5px 20px $shadow,
+                  -5px -5px 20px $light;
+      }
+
+      .hole {
+        box-shadow: 5px 5px 10px inset $shadow,
+                  -5px -5px 10px inset $light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .led {
+        height: 1rem;
+        width: 1rem;
+        background-color: #666;
+      }
+
+      .led:hover {
+        background-color: orange;
+        box-shadow: 0 0 5px orange;
+        transition: 0.5s;
+      }
+
+      .example:active {
+        background: none;
+        transition: 0.3s;
+      }
+
+      .concave {
+        background: linear-gradient(135deg, #CCC, #FFF);
+      }
+
+      .convex {
+        background: linear-gradient(135deg, #FFF, #CCC);
+      }
+
+      .smaller {
+        height: $smaller;
+        width:$smaller;
+      }
+
+      .small {
+        height: $small;
+        width: $small;
+      }
+
+      .medium {
+        height: $medium;
+        width: $medium;
+      }
+
+      .circle-switch {
+        height: $medium;
+        width: $small;
+        border-radius: 100% / 50%;
+      }
+
+      .big {
+        height: $big;
+        width: $big;
+      }
+
+      .inner {
+        width: $ring;
+        height: $ring;
+
+        box-shadow: 5px 5px 20px inset $light-shadow,
+                    -5px -5px 20px inset $light;
+      }
+
+      .inner-ring {
+        height: $ring;
+        width: $ring;
+        background-color: $bg;
+        box-shadow: 5px 5px 5px inset $light-shadow,
+                    -5px -5px 5px $light-shadow;
+      }
+
+      .ring {
+        box-shadow: 5px 5px 5px inset $light,
+                    -5px -5px 5px inset $shadow;
+      }
+
+      .circle {
+        border-radius: 100%;
+      }
+
+      .square {
+        border-radius: 20%;
+      }
+
+      .double-radius {
+        border-radius: 50% / 30%;
+      }
+
+      .triangle-container {
+        display:flex;
+        justify-content: center;
+        perspective: 20px;
+        margin: 0 2.5rem;
+      }
+
+      .triangle {
+        position: absolute;
+        transform-style: preserve-3d;
+        transform: rotateX(45deg);
+        border-radius: 30% / 100% 100% 10% 10%;
+      }
+
+      .example-triangle {
+        box-shadow: 5px 1px 10px $shadow,
+                  -10px -10px 20px $light;
+      }
+
+      .switch {
+        input[type="checkbox"] {
+          position: absolute;
+          -webkit-appearance: none;
+          width: $medium;
+          height: $small;
+          border-style: solid;
+          border-width: 5px;
+          border-color: $bg;
+          box-shadow: 5px 5px 10px inset $shadow,
+                      -5px -5px 10px inset $light,
+                      5px 5px 10px $shadow,
+                      -5px -5px 10px $light;
+        }
+
+        input:before {
+          content: "";
+          position: absolute;
+          margin: auto;
+          top: 0;
+          bottom: 0;
+        }
+
+        input:before {
+          left: 0.2rem;
+          background: linear-gradient(135deg, $light, $light-shadow);
+          height: 2rem;
+          width: 2rem;
+          box-shadow: 5px 5px 10px $shadow;
+        }
+
+        input[type="checkbox"]:checked:before {
+          left: 2rem;
+        }
+      }
+
+      .circle-switch {
+        input[type="checkbox"] {
+          border-radius: $small;
+          }
+
+        input:before {
+          border-radius: 50%;
+        }
+      }
+
+      .square-switch {
+        input[type="checkbox"] {
+          border-radius: 1rem;
+          }
+
+        input:before {
+          border-radius: .5rem;
+        }
+      }
+
+      .dr-switch {
+        input[type="checkbox"] {
+          border-radius: 50%;
+          }
+
+        input:before {
+          height: 1.5rem;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+}
