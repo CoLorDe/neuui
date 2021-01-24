@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/neuui/static/css/main.dba517a5.chunk.css",
+    "main.js": "/neuui/static/js/main.faf19ea2.chunk.js",
+    "main.js.map": "/neuui/static/js/main.faf19ea2.chunk.js.map",
+    "runtime-main.js": "/neuui/static/js/runtime-main.8643d6ef.js",
+    "runtime-main.js.map": "/neuui/static/js/runtime-main.8643d6ef.js.map",
+    "static/js/2.9c9dc819.chunk.js": "/neuui/static/js/2.9c9dc819.chunk.js",
+    "static/js/2.9c9dc819.chunk.js.map": "/neuui/static/js/2.9c9dc819.chunk.js.map",
+    "static/js/3.d1353215.chunk.js": "/neuui/static/js/3.d1353215.chunk.js",
+    "static/js/3.d1353215.chunk.js.map": "/neuui/static/js/3.d1353215.chunk.js.map",
+    "index.html": "/neuui/index.html",
+    "static/css/main.dba517a5.chunk.css.map": "/neuui/static/css/main.dba517a5.chunk.css.map",
+    "static/js/2.9c9dc819.chunk.js.LICENSE.txt": "/neuui/static/js/2.9c9dc819.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8643d6ef.js",
+    "static/js/2.9c9dc819.chunk.js",
+    "static/css/main.dba517a5.chunk.css",
+    "static/js/main.faf19ea2.chunk.js"
+  ]
+}
