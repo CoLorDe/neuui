@@ -26,19 +26,41 @@
 
   .nav {
     padding: 1rem;
+    display: flex;
+    flex-direction: row;
   }
 
   a {
     font-weight: 700;
     font-size: 1.5rem;
+    padding-right: 1rem;
   }
 }
 
 .main {
-  padding: 5vw;
+  padding: 1vw 5vw;
+
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
 
   h2 {
     color: #555;
+  }
+
+  .sub {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    animation: fadeIn 2s;
+
+    .intro {
+      max-width: 30rem;
+      padding-right: 3vw;
+    }
   }
 
   .ex-container {
@@ -49,9 +71,17 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
+      animation: fadeIn ease 3s;
 
       .item {
         margin: 1vw;
+        animation: fadeInRight ease 2s;
+        position: relative;
+      }
+
+      @keyframes fadeInRight {
+        0% {opacity:0; left: -2vw;}
+        100% {opacity:1; left: 0;}
       }
 
       .description {
@@ -90,6 +120,7 @@
         height: 1rem;
         width: 1rem;
         background-color: #666;
+        transition: .3s;
       }
 
       .led:hover {
@@ -100,15 +131,15 @@
 
       .example:active {
         background: none;
-        transition: 0.3s;
+        transition-duration: .9s;
       }
 
       .concave {
-        background: linear-gradient(135deg, #CCC, #FFF);
+        background: $concave-gradient;
       }
 
       .convex {
-        background: linear-gradient(135deg, #FFF, #CCC);
+        background: $convex-gradient;
       }
 
       .smaller {
@@ -148,14 +179,15 @@
       .inner-ring {
         height: $ring;
         width: $ring;
-        background-color: $bg;
         box-shadow: 5px 5px 5px inset $light-shadow,
                     -5px -5px 5px $light-shadow;
       }
 
       .ring {
         box-shadow: 5px 5px 5px inset $light,
-                    -5px -5px 5px inset $shadow;
+                    -5px -5px 5px inset $shadow,
+                    10px 10px 20px $shadow,
+                    -10px -10px 20px $light;
       }
 
       .circle {
@@ -184,6 +216,10 @@
         border-radius: 30% / 100% 100% 10% 10%;
       }
 
+      .triangle:active {
+        background: none;
+      }
+
       .example-triangle {
         box-shadow: 5px 1px 10px $shadow,
                   -10px -10px 20px $light;
@@ -197,7 +233,7 @@
           height: $small;
           border-style: solid;
           border-width: 5px;
-          border-color: $bg;
+          border-color: #FFF0;
           box-shadow: 5px 5px 10px inset $shadow,
                       -5px -5px 10px inset $light,
                       5px 5px 10px $shadow,
@@ -214,14 +250,17 @@
 
         input:before {
           left: 0.2rem;
-          background: linear-gradient(135deg, $light, $light-shadow);
+          background: $convex-gradient;
           height: 2rem;
           width: 2rem;
           box-shadow: 5px 5px 10px $shadow;
+          transition: .3s;
+          z-index: 9999;
         }
 
         input[type="checkbox"]:checked:before {
           left: 2rem;
+          transition: .3s;
         }
       }
 

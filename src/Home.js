@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BgColor from './BgColor'
 
 function Home() {
+  const [bgColor, setColor] = useState("")
+
   return (
-    <div className="main">
-      <h2>Description</h2>
-      <p className="intro">Some examples of neumorphism UI items, click or hover on them to see the active state!</p>
+    <div className="main" style={{backgroundColor: bgColor}}>
+      <div className="sub">
+        <div>
+          <h2>Description</h2>
+          <p className="intro">Some examples of neumorphism UI elements, click
+          or hover on them to see the active state! Change the color of the
+          background to see how it looks in different tones. I am planning to
+          add a css generator soon!
+          </p>
+        </div>
+        <BgColor onChange={ setColor }/>
+      </div>
       <div className="ex-container">
         <div className="row">
           <p className="description pad-top">Circle</p>
@@ -42,7 +54,7 @@ function Home() {
           </div>
           <div className="item">
             <p className="description">Switch</p>
-            <label class="switch circle-switch">
+            <label className="switch circle-switch">
               <input type="checkbox" />
             </label>
           </div>
@@ -83,7 +95,7 @@ function Home() {
           </div>
           <div className="item">
             <p className="description">Switch</p>
-            <label class="switch square-switch">
+            <label className="switch square-switch">
               <input type="checkbox" />
             </label>
           </div>
@@ -124,7 +136,7 @@ function Home() {
           </div>
           <div className="item">
             <p className="description">Switch</p>
-            <label class="switch dr-switch">
+            <label className="switch dr-switch">
               <input type="checkbox" />
             </label>
           </div>
@@ -145,7 +157,7 @@ function Home() {
             <div className="triangle-container"><div className="example-triangle smaller triangle convex"></div></div>
           </div>
           <div className="item">
-            <p>Triangles are usable within certain limits,<br />shadows become problematic, and<br /> big shapes slow down the scroll.</p>
+            <p>Triangles are usable within certain limits,<br />shadows become problematic, and<br /> big shapes slow down the page scroll.</p>
           </div>
         </div>
       </div>
