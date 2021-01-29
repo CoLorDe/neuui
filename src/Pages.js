@@ -3,8 +3,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
 import Home from './Home'
+import Generator from './components/Generator'
 
 function Pages() {
   return(
@@ -12,6 +12,9 @@ function Pages() {
         <Switch>
           <Route exact path="/neuui">
             <Home />
+          </Route>
+          <Route exact path="/neuui/css-gen">
+            <Generator />
           </Route>
         </Switch>
       </div>

@@ -2,11 +2,13 @@
 @import "variables";
 
 :root {
-  background-color: #E6E6E6;
+  background-color: $bg;
   color: #666;
   a {
     text-decoration: none;
-    color: $link;
+    background: -webkit-linear-gradient(-60deg, #0000FF, #6699DD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
@@ -16,18 +18,38 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  box-shadow: 0 10px 10px $shadow,
-              0 10px 10px inset $light,
+  flex-wrap: wrap;
+  box-shadow: 0 -10px 10px $shadow,
               0 -10px 10px inset $light-shadow;
 
+  .title {
+    padding: 0 1rem;
+    margin: 1em;
+    border-radius: 40px;
+    align-self: flex-start;
+    box-shadow: -5px -5px 10px $shadow,
+                5px 5px 10px inset $shadow,
+                5px 5px 10px $light,
+                -5px -5px 10px inset $light;
+  }
+
   h1 {
-    padding-left: 1em;
+    margin: 1rem;
+    background: -webkit-linear-gradient(-60deg, #333333, #0000FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .nav {
-    padding: 1rem;
+    margin: 3rem 1rem 1rem 1rem;
+    padding: 1rem 0 1rem 1rem;
+    border-radius: 40px;
     display: flex;
     flex-direction: row;
+    box-shadow: -5px -5px 10px $shadow,
+                5px 5px 10px inset $shadow,
+                5px 5px 10px $light,
+                -5px -5px 10px inset $light
   }
 
   a {
@@ -39,15 +61,125 @@
 
 .main {
   padding: 1vw 5vw;
-
+  display: flex;
   @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
   }
 
+  * {
+    animation: fadeIn 2s;
+  }
+
   h2 {
     color: #555;
   }
+
+  @keyframes growOut {
+    0% {box-shadow: 0 0 0 #0000;}
+    100% {box-shadow: -10px -10px 10px $light,
+                10px 10px 10px inset $light,
+                10px 10px 10px $shadow,
+                -10px -10px 10px inset $shadow;}
+  }
+
+  @keyframes growIn {
+    0% {box-shadow: 0 0 0 inset #0000;}
+    100% {box-shadow: -10px -10px 5px inset $light,
+                      10px 10px 5px inset $shadow;}
+  }
+
+  @keyframes growOutNarrow {
+    0% {box-shadow: 0 0 0 #0000;}
+    100% {box-shadow: -10px -10px 5px $light,
+                      10px 10px 5px inset $light,
+                      10px 10px 5px $shadow,
+                      -10px -10px 5px inset $shadow;}
+  }
+
+  .panel {
+    width: 900px;
+    height: 600px;
+    border-radius: 3rem;
+    box-shadow: -10px -10px 10px $light,
+                10px 10px 10px inset $light,
+                10px 10px 10px $shadow,
+                -10px -10px 10px inset $shadow;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    animation: growOut 2s;
+
+    .preview-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem;
+      height: 20rem;
+      width: 20rem;
+      border-radius: 1rem;
+      box-shadow: -10px -10px 5px inset $light,
+                  10px 10px 5px inset $shadow;
+      animation: growIn 2s;
+    }
+
+
+
+    .options {
+      margin: 1rem;
+      border-radius: 1rem;
+      height: 30rem;
+      width: 20rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: -10px -10px 5px $light,
+                  10px 10px 5px inset $light,
+                  10px 10px 5px $shadow,
+                  -10px -10px 5px inset $shadow;
+      animation: growOut 2s;
+
+      h4 {
+        margin: 0;
+      }
+
+      .sliders {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .css-display {
+        width: 70%;
+        padding: 1rem;
+        margin-top: 2rem;
+        border-radius: 10px;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+
+        background-color: #444;
+        color: #BBB;
+        font-size: 12px;
+
+        p {
+          margin: .1em;
+        }
+        o {
+          color: #E19933;
+        }
+        b {
+          color: #33BBCC;
+        }
+      }
+    }
+  }
+
 
   .sub {
     display: flex;
@@ -60,6 +192,12 @@
     .intro {
       max-width: 30rem;
       padding-right: 3vw;
+
+      b {
+        background: -webkit-linear-gradient(-60deg, #0000FF, #6699DD);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 
@@ -135,11 +273,17 @@
       }
 
       .concave {
-        background: $concave-gradient;
+        box-shadow: 5px 5px 20px inset $shadow,
+                    -5px -5px 20px inset $light,
+                    10px 10px 20px $shadow,
+                    -10px -10px 20px $light;
       }
 
       .convex {
-        background: $convex-gradient;
+        box-shadow: 5px 5px 20px inset $light,
+                    -5px -5px 20px inset $shadow,
+                    10px 10px 20px $shadow,
+                    -10px -10px 20px $light;
       }
 
       .smaller {
@@ -180,7 +324,8 @@
         height: $ring;
         width: $ring;
         box-shadow: 5px 5px 5px inset $light-shadow,
-                    -5px -5px 5px $light-shadow;
+                    -5px -5px 5px $light-shadow,
+                    5px 5px 10px $light;
       }
 
       .ring {
@@ -250,12 +395,15 @@
 
         input:before {
           left: 0.2rem;
-          background: $convex-gradient;
           height: 2rem;
           width: 2rem;
-          box-shadow: 5px 5px 10px $shadow;
+          box-shadow: 5px 5px 5px inset $light,
+                      -5px -5px 5px inset $shadow,
+                      3px 3px 5px $shadow,
+                      -3px -3px 5px $light;
           transition: .3s;
           z-index: 9999;
+
         }
 
         input[type="checkbox"]:checked:before {

@@ -4,18 +4,18 @@ import BgColor from './BgColor'
 function Home() {
   const [bgColor, setColor] = useState("")
 
+
   return (
-    <div className="main" style={{backgroundColor: bgColor}}>
+    <div className="main" style={{backgroundColor: bgColor }}>
       <div className="sub">
         <div>
           <h2>Description</h2>
-          <p className="intro">Some examples of neumorphism UI elements, click
-          or hover on them to see the active state! Change the color of the
+          <p className="intro">Some examples of neumorphism UI elements, <b>click</b> or <b>hover</b> on them to see the active state! Change the color of the
           background to see how it looks in different tones. I am planning to
           add a css generator soon!
           </p>
         </div>
-        <BgColor onChange={ setColor }/>
+        <BgColor onChange={ setColor } />
       </div>
       <div className="ex-container">
         <div className="row">
@@ -34,7 +34,7 @@ function Home() {
           </div>
           <div className="item ">
             <p className="description">Medium</p>
-            <div className="example circle medium concave"></div>
+            <div className="example circle medium"></div>
           </div>
           <div className="item">
             <p className="description">Hole</p>
@@ -42,7 +42,7 @@ function Home() {
           </div>
           <div className="item">
             <p className="description">Big</p>
-            <div className="example circle big concave"></div>
+            <div className="example circle big"></div>
           </div>
           <div className="item">
             <p className="description">Pad</p>
@@ -83,7 +83,7 @@ function Home() {
           </div>
           <div className="item">
             <p className="description">Big</p>
-            <div className="example square big concave"></div>
+            <div className="example square big"></div>
           </div>
           <div className="item">
             <p className="description">Pad</p>
@@ -124,7 +124,7 @@ function Home() {
           </div>
           <div className="item">
             <p className="description">Big</p>
-            <div className="example double-radius big concave"></div>
+            <div className="example double-radius big "></div>
           </div>
           <div className="item">
             <p className="description">Pad</p>

@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <div className="header">
-      <h1>Neumorph</h1>
-        <div className="nav">
-          <Link to="/neuui">Home</Link>
-          <a href="">Generator</a>
-        </div>
-
+      <div className="title">
+        <h1>Neumorph</h1>
+      </div>
+      <div className="nav">
+        <Link to="/neuui">Home</Link>
+        <a href="/neuui/css-gen">Generator</a>
+      </div>
     </div>
   );
 }
