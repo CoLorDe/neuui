@@ -143,21 +143,9 @@ function Home() {
         </div>
 
         <div className="row">
-          <p className="description pad-top">Triangle</p>
+          <p className="description pad-top">Triangles</p>
           <div className="item">
-            <p className="description">Flat</p>
-            <div className="triangle-container"><div className="example-triangle smaller triangle"></div></div>
-          </div>
-          <div className="item">
-            <p className="description">Concave</p>
-            <div className="triangle-container"><div className="example-triangle smaller triangle concave"></div></div>
-          </div>
-          <div className="item">
-            <p className="description">Convex</p>
-            <div className="triangle-container"><div className="example-triangle smaller triangle convex"></div></div>
-          </div>
-          <div className="item">
-            <p>Triangles are usable within certain limits,<br />shadows become problematic, and<br /> big shapes slow down the page scroll.</p>
+            <p>Triangles are usable within certain limits,<br />shadows become problematic, and<br /> big shapes slow down the page scroll. (Temporarily removed)</p>
           </div>
         </div>
       </div>

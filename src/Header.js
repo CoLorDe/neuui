@@ -9,7 +9,7 @@ function Header() {
       </div>
       <div className="nav">
         <Link to="/neuui">Home</Link>
-        <a href="/neuui/css-gen">Generator</a>
+        <Link to="/neuui/css-gen">CSS-Generator</Link>
       </div>
     </div>
   );

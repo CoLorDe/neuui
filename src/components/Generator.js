@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 function Generator() {
-  const [distance, setDistance] = useState(5);
-  const [width, setWidth] = useState(50);
-  const [height, setHeight] = useState(50);
+  const [distance, setDistance] = useState(10);
+  const [width, setWidth]   = useState(100);
+  const [height, setHeight] = useState(100);
   const [radius, setRadius] = useState(10);
 
   return(
@@ -19,14 +19,15 @@ function Generator() {
 
         <div className="options">
           <div className="sliders">
-            <h4>Distance</h4>
-            <input type="range" min={3} max={20} onChange={e => setDistance(e.target.value)} />
             <h4>Height</h4>
             <input type="range" min={20} max={200} onChange={e => setHeight(e.target.value)} />
             <h4>Width</h4>
             <input type="range" min={20} max={200} onChange={e => setWidth(e.target.value)} />
+            <h4>Distance</h4>
+            <input type="range" min={3} max={20} onChange={e => setDistance(e.target.value)} />
             <h4>Radius</h4>
             <input type="range" min={0} max={100} onChange={e => setRadius(e.target.value)} />
+
           </div>
           <div className="css-display">
             <p>height: <o>{height}px</o>;</p>
