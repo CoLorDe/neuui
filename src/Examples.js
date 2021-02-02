@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import BgColor from './BgColor'
 
-function Home() {
+function Examples() {
   const [bgColor, setColor] = useState("")
 
 
@@ -75,7 +75,7 @@ function Home() {
           </div>
           <div className="item ">
             <p className="description">Medium</p>
-            <div className="example square medium concave"></div>
+            <div className="example square medium"></div>
           </div>
           <div className="item">
             <p className="description">Hole</p>
@@ -116,7 +116,7 @@ function Home() {
           </div>
           <div className="item ">
             <p className="description">Medium</p>
-            <div className="example double-radius medium concave"></div>
+            <div className="example double-radius medium"></div>
           </div>
           <div className="item">
             <p className="description">Hole</p>
@@ -153,4 +153,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Examples;

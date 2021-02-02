@@ -1,17 +1,17 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
-import Home from './Home'
-import Generator from './components/Generator'
+import Examples from './Examples'
+import Generator from './Generator'
 
 function Pages() {
   return(
       <div>
         <Switch>
           <Route exact path="/neuui">
-            <Home />
-          </Route>
-          <Route exact path="/neuui/css-gen">
             <Generator />
+          </Route>
+          <Route exact path="/neuui/examples">
+            <Examples />
           </Route>
         </Switch>
       </div>

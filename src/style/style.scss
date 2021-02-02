@@ -14,19 +14,35 @@
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
-  box-shadow: 0 -10px 10px $shadow,
+  box-shadow: 0 10px 10px $light-shadow,
               0 -10px 10px inset $light-shadow;
+
+  @keyframes animate {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 110%;
+    }
+  }
 
   a {
     text-decoration: none;
-    background: -webkit-linear-gradient(-60deg, #0000FF, #6699DD);
+    position: relative;
+    background: linear-gradient(56deg, #3344BB, #3344BB 48%, #66AADD 50%, #66AADD 52%, #3344BB 54%);
+    background-repeat: no-repeat;
+    background-size: 200%;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+
+  a:hover {
+    animation: animate 2s ease infinite;
   }
 
   .title {
     padding: 0 1rem;
-    margin: 1em;
+    margin: 2rem;
     border-radius: 40px;
     align-self: flex-start;
     box-shadow: -5px -5px 10px $shadow,
@@ -43,7 +59,7 @@
   }
 
   .nav {
-    margin: 3rem 1rem 1rem 1rem;
+    margin: 2rem;
     padding: 1rem 0 1rem 1rem;
     border-radius: 40px;
     display: flex;
@@ -76,6 +92,7 @@
 
   h2 {
     color: #555;
+    padding-left: 2rem;
   }
 
   @keyframes growOut {
@@ -101,8 +118,9 @@
   }
 
   .panel {
-    width: 900px;
-    height: 600px;
+    max-width: 900px;
+    height: auto;
+    margin-bottom: 2rem;
     border-radius: 3rem;
     box-shadow: -10px -10px 10px $light,
                 10px 10px 10px inset $light,
@@ -245,11 +263,6 @@
                   -10px -10px 20px $light;
       }
 
-      .example:active {
-        box-shadow: 5px 5px 20px $shadow,
-                  -5px -5px 20px $light;
-      }
-
       .hole {
         box-shadow: 5px 5px 10px inset $shadow,
                   -5px -5px 10px inset $light;
@@ -268,26 +281,43 @@
       .led:hover {
         background-color: orange;
         box-shadow: 0 0 5px orange;
+        transition: 0.2s;
+      }
+
+      .led:active {
+        background-color: red;
+        box-shadow: 0 0 5px orange;
         transition: 0.5s;
       }
 
-      .example:active {
-        background: none;
-        transition-duration: .9s;
-      }
-
       .concave {
-        box-shadow: 5px 5px 20px inset $shadow,
-                    -5px -5px 20px inset $light,
+        box-shadow: 5px 5px 10px inset $shadow,
+                    -5px -5px 10px inset $light,
                     10px 10px 20px $shadow,
                     -10px -10px 20px $light;
+      }
+
+      .concave:active {
+        box-shadow: 5px 5px 5px inset $shadow,
+                    -5px -5px 5px inset $light,
+                    10px 10px 20px $shadow,
+                    -10px -10px 20px $light;
+        transition-duration: .2s;
       }
 
       .convex {
-        box-shadow: 5px 5px 20px inset $light,
-                    -5px -5px 20px inset $shadow,
+        box-shadow: 5px 5px 5px inset $light,
+                    -5px -5px 5px inset $shadow,
                     10px 10px 20px $shadow,
                     -10px -10px 20px $light;
+      }
+
+      .convex:active {
+        box-shadow: -5px -5px 5px inset $light,
+                    5px 5px 5px inset $shadow,
+                    10px 10px 20px $shadow,
+                    -10px -10px 20px $light;
+        transition-duration: .2s;
       }
 
       .smaller {
@@ -351,31 +381,16 @@
         border-radius: 50% / 30%;
       }
 
-      .triangle-container {
-        display:flex;
-        justify-content: center;
-        perspective: 20px;
-        margin: 0 2.5rem;
-      }
-
-      .triangle {
-        position: absolute;
-        transform-style: preserve-3d;
-        transform: rotateX(45deg);
-        border-radius: 30% / 100% 100% 10% 10%;
-      }
-
-      .triangle:active {
-        background: none;
-      }
-
-      .example-triangle {
-        box-shadow: 5px 1px 10px $shadow,
-                  -10px -10px 20px $light;
-      }
-
       .switch {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
         input[type="checkbox"] {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
           position: absolute;
           -webkit-appearance: none;
           width: $medium;
@@ -383,6 +398,7 @@
           border-style: solid;
           border-width: 5px;
           border-color: #FFF0;
+          outline: none;
           box-shadow: 5px 5px 10px inset $shadow,
                       -5px -5px 10px inset $light,
                       5px 5px 10px $shadow,
